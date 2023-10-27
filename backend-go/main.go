@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/dzzlr/devops-backend-golang/backend-go/models"
-	"github.com/dzzlr/devops-backend-golang/controllers/backend-go/productcontroller"
+	"github.com/dzzlr/devops-backend-golang/backend-go/controllers/productcontroller"
 )
 
 func main() {
