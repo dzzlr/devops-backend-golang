@@ -1,3 +1,6 @@
+/backend-go/.env
+/backend-go/main
+
 /terraform/.terraform
 /terraform/.terraform.lock.hcl
 /terraform/aws-credentials.tfvars
