@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Mirror to CodeCommit
-        uses: dzzlr/devops-backend-golang@v1
+        uses: dzzlr/devops-backend-golang@main
         with:
           target_repo_url: ssh://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/devops-backend-golang
           ssh_private_key: ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY }}
