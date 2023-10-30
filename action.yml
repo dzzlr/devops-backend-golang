@@ -1,6 +1,6 @@
 name: Github to AWS CodeCommit Sync
-description: "Synchronize from GitHub to CodeCommit via GitHub Actions using IAM credentials." 
-author: dzzlr
+description: 'Synchronize from GitHub to CodeCommit via GitHub Actions using IAM credentials.'
+author: 'dzzlr'
 branding:
   icon: terminal
   color: yellow
@@ -13,4 +13,4 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: ./Dockerfile"
+  image: './Dockerfile'
