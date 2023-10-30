@@ -1,0 +1,22 @@
+name: Mirror GitHub To CodeCommit
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  mirror_to_codecommit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Mirror to CodeCommit
+        uses: dzzlr/devops-backend-golang@v1
+        with:
+          target_repo_url: ssh://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/devops-backend-golang
+          ssh_private_key: ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY }}
+          ssh_username: ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY_ID }}
