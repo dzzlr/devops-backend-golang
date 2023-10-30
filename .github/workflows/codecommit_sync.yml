@@ -22,5 +22,6 @@ jobs:
 
       - name: Sync with AWS CodeCommit
         run: |
-          git remote add awscodecommit https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/devops-backend-golang
-          git push awscodecommit main:main
+          git config --global credential.helper '!aws codecommit credential-helper $@'
+          git config --global credential.UseHttpPath true
+          git push https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/devops-backend-golang
