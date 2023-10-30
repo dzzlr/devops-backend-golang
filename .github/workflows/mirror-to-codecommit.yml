@@ -7,21 +7,21 @@ on:
 jobs:
   mirror_to_codecommit:
     runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Code
-          uses: actions/checkout@main
-          with:
-            fetch-depth: 0
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@main
+        with:
+          fetch-depth: 0
 
-        - name: Configure AWS Credentials
-          uses: aws-actions/configure-aws-credentials@main
-          with:
-            aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
-            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws-region: ap-southeast-1
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@main
+        with:
+          aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-southeast-1
 
-        - name: Mirror to CodeCommit
-          uses: dzzlr/devops-backend-golang@main
-          with:
-            target_repo_url: https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/devops-backend-golang
-            aws-region: ap-southeast-1
+      - name: Mirror to CodeCommit
+        uses: dzzlr/devops-backend-golang@main
+        with:
+          target_repo_url: https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/devops-backend-golang
+          aws-region: ap-southeast-1
