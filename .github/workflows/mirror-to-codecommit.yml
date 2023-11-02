@@ -22,7 +22,9 @@ jobs:
 
       - name: Push to AWS CodeCommit
         run: |
-          git remote add codecommit https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/devops-backend-golang
+          git config --global user.name fakhri.dev12
+          git config --global user.email meal-wakings-0c@icloud.com
           git config --global credential.helper '!aws codecommit credential-helper $@'
           git config --global credential.UseHttpPath true
+          git remote add codecommit https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/devops-backend-golang
           git push codecommit main
